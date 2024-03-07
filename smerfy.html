@@ -1,10 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <audio src="Star Wars Intro HD 1080p.mp3" autoplay loop></audio>
     <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
     <link rel="icon" href="piwo_emote.png" type="image/png">
     <style>
@@ -14,10 +12,12 @@
             font-family: 'Minecraft', sans-serif;
             color: yellow;
             overflow: hidden;
-            display: cen;
+            display: flex;
             justify-content: center;
             align-items: center;
             font-size: 200%;
+            position: relative;
+            height: 100vh;
         }
 
         .opening-crawl-container {
@@ -29,9 +29,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            animation: openingCrawl 160s linear infinite;
+            animation: openingCrawl 180s linear infinite;
             white-space: pre-line;
-            transform-origin: top;
+            transform-origin: top center;
             position: relative;
             top: 100vh;
         }
@@ -44,18 +44,60 @@
                 top: -300vh; 
             }
         }
+
+        @-webkit-keyframes openingCrawl {
+            0%, 100% {
+                top: 100vh;
+            }
+            50% {
+                top: -300vh; 
+            }
+        }
+
+        
+        #musicButton {
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            background-color: #1e69af;
+            font-family: 'Minecraft', sans-serif;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 30px;
+            cursor: pointer;
+            border-radius: 4px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            transition: background-color 0.3s;
+        }
+
+        #musicButton:hover {
+            background-color: #4c4eaf;
+        }
     </style>
     <title>KONIEC</title>
 </head>
 <body>
     <div class="opening-crawl-container">
         <div class="opening-crawl">
-        
+            
+
+
+
+
+
+
+
+
+
+
             A long time ago in a galaxy far,
             far away.....
-
-
-
+            
 
 
 
@@ -77,6 +119,8 @@
             base and pursued them across
             the galaxy.
 
+
+
             Evading the dreaded Imperial
             Starfleet, a group of freedom
             fighters led by Luke Skywalker
@@ -84,17 +128,19 @@
             base on the remote ice world
             of Hoth.
 
+
+
             The evil lord Darth Vader,
             obsessed with finding young
             Skywalker, has dispatched
             thousands of remote probes into
-            the far reaches of space....
+            the far reaches of space......
 
 
 
 
 
-            
+
 
             to juz serio jest koniec
             mam nadzieje ze sie dobrze bawiliscie 
@@ -104,23 +150,39 @@
 
 
 
+            n
 
 
+            i
 
-            
 
-            N
+            g
 
-            I
 
-            G
+            g
 
-            G
 
-            E
+            e
 
-            R
+
+            r
         </div>
     </div>
+
+    
+    <button id="musicButton" onclick="toggleMusic()">Toggle Music</button>
+    <audio id="backgroundMusic" src="Star Wars Intro HD 1080p.mp3" loop></audio>
+
+    <script>
+        var music = document.getElementById('backgroundMusic');
+
+        function toggleMusic() {
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
+    </script>
 </body>
 </html>
